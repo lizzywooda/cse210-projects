@@ -31,9 +31,10 @@ class Journal
     {
         Console.WriteLine("What file would you like to save to: ");
         string filename = Console.ReadLine();
-        foreach (var entry in entries)
+
+        using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            using (StreamWriter outputFile = new StreamWriter(filename))
+            foreach (var entry in entries)
             {
                 // You can add text to the file with the WriteLine method
                 outputFile.WriteLine($"{entry._date} - {entry._prompt} - {entry._userInput}\n");
