@@ -19,10 +19,15 @@ public class Order
         {
             total += product.GetPrice();
         }
-        if (_customer.LivesInUSA())
+        if (_customer.LivesInUSA()){
             total += 5;
-        else
+            Console.Write($"\n\tShipping: $5.00\n");
+        }
+        else{
             total += 35;
+            Console.Write($"\n\tShipping: $35.00\n");
+        }
+        Console.Write($"\n\tTotal: $");
         Console.WriteLine(total);
     }
     public void PrintShippingLabel()
@@ -34,7 +39,6 @@ public class Order
     {
         foreach (Product product in _products)
             product.Display();
-        Console.Write($"\n\tTotal: $");
         CalculateCost();
     }
 

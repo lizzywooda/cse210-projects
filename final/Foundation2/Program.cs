@@ -21,21 +21,21 @@ class Program
         Address address3 = new Address();
         address3.SetAddress("789 Where Dr");
         address3.SetCity("Somewhere");
-        address3.SetCountry("USA");
-        address3.SetState("ID");
+        address3.SetCountry("CAN");
+        address3.SetState("Ontario");
 
         customer1.SetAddress(address1);
         customer2.SetAddress(address2);
         customer3.SetAddress(address3);
 
-        Product product1 = new Product("Iphone", 354650, 999.99);
-        Product product2 = new Product("Ear Buds", 684651, 99.99);
-        Product product3 = new Product("Baby wipes", 54354, 15.75, 3);
-        Product product4 = new Product("Charlston Chews", 568432, 1.25, 36);
-        Product product5 = new Product("Duster", 354465, 57.98);
-        Product product6 = new Product("RAM 16GB", 357487, 35.99, 2);
-        Product product7 = new Product("Plush toy", 12657, 21.10, 3);
-        Product product8 = new Product("Fidget Slug", 56421, 9.55, 2);
+        Product product1 = new Product("Coffee Table", 123456, 44.99);
+        Product product2 = new Product("Couch", 789123, 199.99);
+        Product product3 = new Product("Love Seat", 345678, 120.00, 2);
+        Product product4 = new Product("Book Shelf", 910112, 49.99, 3);
+        Product product5 = new Product("TV Stand", 121314, 399.99);
+        Product product6 = new Product("Electric Fireplace", 151617, 60.25, 2);
+        Product product7 = new Product("Twin Bed Frame", 181920, 43.78, 2);
+        Product product8 = new Product("Queen Bed Frame", 212223, 73.45,1);
 
         Order order1 = new Order(customer1);
         Order order2 = new Order(customer2);
@@ -53,7 +53,7 @@ class Program
         order3.AddProduct(product8);
         order3.AddProduct(product7);
 
-
+        Console.Clear();
         order1.PrintPackingLabel();
         Console.WriteLine();
         order1.PrintShippingLabel();
