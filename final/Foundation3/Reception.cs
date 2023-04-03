@@ -1,33 +1,13 @@
 using System;
-using System.Collections;
 
-class Reception : Event
-{
-    protected string _emailRSVP;
+public class Reception: Event{
+    private string _email {get; set;}
 
-    public string _eventType = "Reception";
-
-    public Reception()
-    {
+    public Reception(string title, string description, string date, string time, Address address, string eventType, string email): base(title, description, date, time, address, eventType){
+        _email = email;
 
     }
-
-    public Reception(string email)
-    {
-        _emailRSVP = email;
-    }
-        public override string getStandard()
-    {
-        return $"          *****          {_title} {_description} {_date}, at {_time} {_address}          *****           ";
-    }
-
-    public override string getDetails()
-    {
-        return $"**  **  **  **  **  **  **  ** We are pleased to announce the {_title} {_description}  Please Join Us to Celebrate: {_date}, from {_time}  We will be celebrating at {_address}   >>>  Please RSVP at {_emailRSVP} <<<    **  **  **  **  **  **  **  **    ";
-    }
-
-    public override string getShort()
-    {
-        return $"*** Save the Date *** {_title} {_date}   ***      ***      ***    ";
+    public string ReceptionFullDetails(){
+        return $" \n RSVP @: {_email}";
     }
 }

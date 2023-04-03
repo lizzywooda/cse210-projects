@@ -4,55 +4,43 @@ class Program
 {
     static void Main(string[] args)
     {
-        Event event1 = new Lecture("The Lorax", 300);
-        event1.getEvent("The Effects of Tree Cutting", "An extended review of deforestation", "Lecture Series", "April 28, 2023", "4:30 PM - 7:00 PM","Pilchuck Tree Farm - 1624 300th St NW, Arlington, WA 98223");
-        Console.Write(event1.getShort());
-        Console.Write(event1.getStandard());
-        Console.Write(event1.getDetails());
-        Console.Write("Hit enter to see the next event ");
-        Console.ReadLine();
-        Console.Clear();
+        //create reception event
+        Address address1 = new Address("123 Madeup Way", "Rexburg", "Idaho", 83440, "USA");
+        Reception reception1 = new Reception("Canepari Wedding", "Wedding reception for Luke and Lizzy Canepari", "12/17/2022", "5-7pm", address1, "Reception","madeupemail@gmail.com");
+        
+        //create outdoor event
+        Address address2 = new Address("456 Fake Place", "Rexburg", "Idaho", 83440, "USA");
+        Outdoor outdoor1 = new Outdoor("Outdoor Consert","Come hear some great music while getting some fresh air=.", "4/03/2023","5-7pm", address2, "Outdoor", "Partly Cloudy");
 
-        Event event2 = new Lecture("William H. Burn", 150);
-        event2.getEvent("A Study in Cremation", "Advantages and Disadvantages of Crematory Practices", "Lecture", "May 31, 2023", "5:00PM - 6:00PM", "Hotel Indigo - 1028 13th St., Everett, WA 98201");
-        Console.Write(event2.getShort());
-        Console.Write(event2.getStandard());
-        Console.Write(event2.getDetails());
-        Console.Write("Hit enter to see the next event ");
-        Console.ReadLine();
-        Console.Clear();
-
-        Event event3 = new Reception("romiet@gettingmarried.com");
-        event3.getEvent("Montague and Capulet Wedding Reception", "Come see Romeo and Juliet tie the knot!", "Wedding and Reception", "April 15, 2023", "6:00 PM - 10:00 PM", "Happy Valley Lutheran Church and Cemetery, Stanwood, WA" );
-        Console.Write(event3.getShort());
-        Console.Write(event3.getStandard());
-        Console.Write(event3.getDetails());
-        Console.Write("Hit enter to see the next event ");
-        Console.ReadLine();
-
-        Event event4 = new Reception("solongstan@knightbusevents.com");
-        event4.getEvent("Stan Shunpike Retirement Reception", "Join us as we say farewell to the best seating usher the Knight Bus ever had!", "Retirement Reception", "July 31, 2023", "5:00PM - 7:00PM", "Everett Bus Station - 3201 Smith Ave #103, Everett, WA 98201");
-        Console.Write(event4.getShort());
-        Console.Write(event4.getStandard());
-        Console.Write(event4.getDetails());
-        Console.Write("Hit enter to see the next event ");
-        Console.ReadLine();
-
-        Event event5 = new Outdoor("Partly Cloudy, 20% chance rain, High: 76 - Low: 65");
-        event5.getEvent("Colors Comeback Tour", "We're getting the band back together- one night only!", "Outdoor Concert", "June 25, 2023", "7:00PM - 11:00PM", "Amphitheater - NE 74th St, Seattle, WA 98115");
-        Console.Write(event5.getShort());
-        Console.Write(event5.getStandard());
-        Console.Write(event5.getDetails());
-        Console.Write("Hit enter to see the next event ");
-        Console.ReadLine();
-
-        Event event6 = new Outdoor("100% chance snow, High: 29 - Low 15");
-        event6.getEvent("Seattle Snow Shoveling Invitational", "Have you got what it takes to shovel snow with the best of the best?", "Outdoor Competition", "December 28, 2023", "12:00 Noon - 5:00 PM", "Pike Place Market- Seattle, WA");        
-        Console.Write(event6.getShort());
-        Console.Write(event6.getStandard());
-        Console.Write(event6.getDetails());
-        Console.Write("Hit enter to see the next event ");
-        Console.ReadLine();
-
+        //create lecture event
+        Address address3 = new Address("525 S Center St", "Rexburg", "Idaho", 83460, "USA");
+        Lecture lecture1 = new Lecture("How to Improve Your Grades", "Learn how to improve those grades to see the dream transcript. It doesn't matter how low your grades are now. Come learn to put in that effort and raise those grades that any parent would be proud of.", "05/21/2023", "9-11am", address3, "Lecture", "Professor Notreal", 85);
+        
+        // call reception event standard details
+        Console.WriteLine(reception1.StandardDetails());
+        Console.WriteLine();
+        // call reception full details
+        Console.WriteLine(reception1.FullDetails() + reception1.ReceptionFullDetails());
+        Console.WriteLine();
+        // call reception short details
+        Console.WriteLine(reception1.ShortDetails());
+        Console.WriteLine();
+        // call outdoor event standard details
+        Console.WriteLine(outdoor1.StandardDetails());
+        Console.WriteLine();
+        // call outdoor event full details
+        Console.WriteLine(outdoor1.FullDetails() + outdoor1.OutdoorFullDetails());
+        Console.WriteLine();
+        // call outdoor event short details
+        Console.WriteLine(outdoor1.ShortDetails());
+        Console.WriteLine();
+        // call lecture standard details
+           Console.WriteLine(lecture1.StandardDetails());
+            Console.WriteLine();
+        // call lecture full details
+        Console.WriteLine(lecture1.FullDetails() + lecture1.LectureFullDetails());
+        Console.WriteLine();
+        // call lecture short details
+        Console.WriteLine(lecture1.ShortDetails());
     }
 }

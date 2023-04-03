@@ -1,33 +1,14 @@
 using System;
-using System.Collections;
 
-class Outdoor : Event
-{
-    protected string _weather;
+public class Outdoor: Event{
+    private string _weather {get; set;}
 
-    public string _eventType = "Outdoor Event";
-
-    public Outdoor()
-    {
+    public Outdoor(string title, string description, string date, string time, Address address, string eventType, string weather): base(title, description, date, time, address, eventType){
+       _weather = weather;
 
     }
-    public Outdoor(string forecast)
-    {
-        _weather = forecast;
-    }
 
-    public override string getStandard()
-    {
-        return $"   ---   ---   ---     {_title} {_description} {_date}, {_time} Location: {_address}    ---   ---   ---   ";
-    }
-
-    public override string getDetails()
-    {
-        return $" ~ ~ ~ ~ ~ ~ ~ ~ ~ ~  {_title} {_description}  When: {_date}, at {_time} Location: {_address}  This is An outdoor event! Please come dressed and prepared for {_weather}  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~  ";
-    }
-
-    public override string getShort()
-    {
-        return $"---------- {_title} An {_type} event {_date} ---------- ";
+     public string OutdoorFullDetails(){
+        return $" \n Weather Forecast: {_weather}";
     }
 }
